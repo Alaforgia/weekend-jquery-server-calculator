@@ -11,10 +11,30 @@ function onReady() {
 
 
 
+// function name(params) {
+    
+// }
 
+//POST FUNCTION
+function postMath() {
+    $.ajax({
+      method: "POST",
+      url: "/calculator",
+      data: {
+    })
+      .then(function (response) {
+        console.log("Look at us now! HOORAH", response);
+        $("#first-number-input").val("");
+        $("#second-number-input").val("");
+        getMath(); // to refresh the DOM w/ the new quote
+      })
+      .catch(function () {
+        console.log("UGHHHHH", response);
+      });
+  }
 
 // GET FUNCTION
-// function get() {
+// function getMath() {
 //     $.ajax({
 //       method: "GET",
 //       url: "/calculator",

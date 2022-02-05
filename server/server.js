@@ -9,6 +9,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("server/public"));
 
+function mathCalculator(input) {
+if ($("#first-number-input").val() && $("$second-number-input") === Number) {
+    input
+}
+}
 //GET
 app.get("/calculator", (req, res) => {
   console.log("Request at /calculator was made", req.body);
