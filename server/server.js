@@ -9,10 +9,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("server/public"));
 
+// let arithmetic = mathCalculator($("#first-number-input"), $("$second-number-input"));
+ let arithmetic = {
+     addition: 
+ }
+
 function mathCalculator(input) {
-if ($("#first-number-input").val() && $("$second-number-input") === Number) {
-    input
-}
+  if ($("#first-number-input").val() && $("$second-number-input") === Number) {
+    input = 
+  }
 }
 //GET
 app.get("/calculator", (req, res) => {
