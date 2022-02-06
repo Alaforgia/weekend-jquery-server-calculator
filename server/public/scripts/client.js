@@ -77,7 +77,7 @@ function getHistory() {
     console.log("operations = ", operations);
     for (const operation of operations) {
       console.log(operation);
-      let currentOperation = $("<div></div>").text(
+      let currentOperation = $("<li></li>").text(
         `${operation.num1} ${operation.operator} ${operation.num2} = ${operation.result}`
       );
       history.append(currentOperation);

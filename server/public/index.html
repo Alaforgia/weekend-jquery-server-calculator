@@ -12,7 +12,7 @@
   </head>
   <body>
     <h1>Server Side Calculator</h1>
-    <div class="value-input">
+    <div class="calculator-container">
       <input type="number" id="first-number-input" />
       <div class="num-buttons">
         <button id="plus" value="+">+</button>
@@ -22,10 +22,10 @@
       </div>
 
       <input type="number" id="second-number-input" />
+      <button id="equals">=</button>
+      <button id="clear-input">C</button>
     </div>
-    <button id="equals">=</button>
-    <button id="clear-input">C</button>
     <div id="result"></div>
-    <div id="history"></div>
+    <ul id="history"></ul>
   </body>
 </html>

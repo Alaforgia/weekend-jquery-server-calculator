@@ -1,0 +1,23 @@
+.calculator-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-width: 550px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+#result {
+  padding-left: 15px;
+  font-size: 40px;
+}
+
+#history {
+  font-size: 24px;
+
+}
+
+h1{
+    padding-left: 15px;
+}
