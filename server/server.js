@@ -9,22 +9,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("server/public"));
 
+const dataStore = [];
+
 function addition(num1, num2) {
-  return num1 + num2;
+  return parseInt(num1) + parseInt(num2);
 }
 function subtraction(num1, num2) {
-  return num1 - num2;
+  return parseInt(num1) - parseInt(num2);
 }
 function multiply(num1, num2) {
-  return num1 * num2;
+  return parseInt(num1) * parseInt(num2);
 }
 function divide(num1, num2) {
-  return num1 / num2;
+  return parseInt(num1) / parseInt(num2);
 }
 
 //GET
 app.get("/calculator", (req, res) => {
   console.log("Request at /calculator was made", req.body);
+  
 });
 //POST
 app.post("/calculator", (req, res) => {
@@ -44,7 +47,13 @@ app.post("/calculator", (req, res) => {
       result = divide(req.body.num1, req.body.num2);
       break;
   }
-  res.send(result);
+  dataStore.push({
+    operator: req.body.operator,
+    num1: req.body.num1,
+    num2: req.body.num2,
+    result: result,
+  });
+  res.json(result);
 });
 // PORT LISTEN
 app.listen(PORT, () => {
