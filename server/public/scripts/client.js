@@ -10,23 +10,21 @@ function onReady() {
 }
 
 
-
-// function name(params) {
-    
-// }
-
 //POST FUNCTION
-function postMath() {
+function postMath(operator, num1, num2) {
     $.ajax({
       method: "POST",
       url: "/calculator",
       data: {
-    })
+          operator: operator,
+          num1: num1,
+          num2: num2
+    }})
       .then(function (response) {
         console.log("Look at us now! HOORAH", response);
         $("#first-number-input").val("");
         $("#second-number-input").val("");
-        getMath(); // to refresh the DOM w/ the new quote
+        getMath(); // to refresh the DOM
       })
       .catch(function () {
         console.log("UGHHHHH", response);

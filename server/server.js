@@ -9,16 +9,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static("server/public"));
 
-// let arithmetic = mathCalculator($("#first-number-input"), $("$second-number-input"));
- let arithmetic = {
-     addition: 
- }
-
-function mathCalculator(input) {
-  if ($("#first-number-input").val() && $("$second-number-input") === Number) {
-    input = 
-  }
+function addition(num1, num2) {
+  return num1 + num2;
 }
+function subtraction(num1, num2) {
+  return num1 - num2;
+}
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+function divide(num1, num2) {
+  return num1 / num2;
+}
+
 //GET
 app.get("/calculator", (req, res) => {
   console.log("Request at /calculator was made", req.body);
@@ -26,6 +29,22 @@ app.get("/calculator", (req, res) => {
 //POST
 app.post("/calculator", (req, res) => {
   console.log("req.body from post", req.body);
+  let result = null;
+  switch (req.body.operator) {
+    case "Addition":
+      result = addition(req.body.num1, req.body.num2);
+      break;
+    case "Subtraction":
+      result = subtraction(req.body.num1, req.body.num2);
+      break;
+    case "Multiplication":
+      result = multiply(req.body.num1, req.body.num2);
+      break;
+    case "Division":
+      result = divide(req.body.num1, req.body.num2);
+      break;
+  }
+  res.send(result);
 });
 // PORT LISTEN
 app.listen(PORT, () => {
