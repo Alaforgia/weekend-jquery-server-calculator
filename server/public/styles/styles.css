@@ -15,9 +15,24 @@
 
 #history {
   font-size: 24px;
-
 }
 
-h1{
-    padding-left: 15px;
+h1 {
+  padding-left: 15px;
+}
+button {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+input {
+  height: 20px;
 }
