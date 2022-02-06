@@ -32,8 +32,11 @@ function postMath(operator, num1, num2) {
   }
 
 // GET FUNCTION
-// function getMath() {
-//     $.ajax({
-//       method: "GET",
-//       url: "/calculator",
-//     })
+function getLastResult() {
+    $.ajax({
+      method: "GET",
+      url: "/getLastResult",
+     }).then(function(response){
+      console.log(response);
+  })
+}

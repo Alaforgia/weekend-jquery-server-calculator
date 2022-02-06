@@ -25,9 +25,9 @@ function divide(num1, num2) {
 }
 
 //GET
-app.get("/calculator", (req, res) => {
-  console.log("Request at /calculator was made", req.body);
-  
+app.get("/getLastResult", (req, res) => {
+  console.log("Request at /getLastResult was made", req.body);
+  res.json(dataStore.slice(-1));
 });
 //POST
 app.post("/calculator", (req, res) => {
