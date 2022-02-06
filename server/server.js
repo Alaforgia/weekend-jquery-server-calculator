@@ -29,6 +29,10 @@ app.get("/getLastResult", (req, res) => {
   console.log("Request at /getLastResult was made", req.body);
   res.json(dataStore.slice(-1));
 });
+app.get("/getHistory", (req, res) => {
+  console.log("Request at /getHistory was made", req.body);
+  res.json(dataStore);
+});
 //POST
 app.post("/calculator", (req, res) => {
   console.log("req.body from post", req.body);
