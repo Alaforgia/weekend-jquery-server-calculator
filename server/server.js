@@ -38,16 +38,16 @@ app.post("/calculator", (req, res) => {
   console.log("req.body from post", req.body);
   let result = null;
   switch (req.body.operator) {
-    case "Addition":
+    case "+":
       result = addition(req.body.num1, req.body.num2);
       break;
-    case "Subtraction":
+    case "-":
       result = subtraction(req.body.num1, req.body.num2);
       break;
-    case "Multiplication":
+    case "*":
       result = multiply(req.body.num1, req.body.num2);
       break;
-    case "Division":
+    case "/":
       result = divide(req.body.num1, req.body.num2);
       break;
   }

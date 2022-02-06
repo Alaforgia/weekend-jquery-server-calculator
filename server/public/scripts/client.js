@@ -2,16 +2,16 @@ $(document).ready(onReady);
 
 function onReady() {
   $("#plus").on("click", function () {
-    selectOperator("Addition");
+    selectOperator("+");
   });
   $("#minus").on("click", function () {
-    selectOperator("Subtraction");
+    selectOperator("-");
   });
   $("#times").on("click", function () {
-    selectOperator("Multiplication");
+    selectOperator("*");
   });
   $("#divide").on("click", function () {
-    selectOperator("Division");
+    selectOperator("/");
   });
   $("#equals").on("click", function () {
     console.log(operator);
@@ -63,6 +63,7 @@ function getLastResult() {
     url: "/getLastResult",
   }).then(function (response) {
     console.log("response =", response);
+    $("#result").text(response[0].result);
   });
 }
 function getHistory() {
@@ -75,7 +76,10 @@ function getHistory() {
     let operations = response;
     console.log("operations = ", operations);
     for (const operation of operations) {
-      let currentOperation = $("<div></div>").text(operation);
+      console.log(operation);
+      let currentOperation = $("<div></div>").text(
+        `${operation.num1} ${operation.operator} ${operation.num2} = ${operation.result}`
+      );
       history.append(currentOperation);
     }
   });
