@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.port || 5000;
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const dataStore = [];
@@ -57,6 +58,6 @@ app.post("/calculator", (req, res) => {
   res.json(result);
 });
 // PORT LISTEN
-app.listen(PORT, () => {
-  console.log("listening on port", PORT);
+app.listen(port, () => {
+  console.log("listening on port", port);
 });
