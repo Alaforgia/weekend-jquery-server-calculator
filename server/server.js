@@ -12,16 +12,16 @@ app.use(express.static("server/public"));
 const dataStore = [];
 
 function addition(num1, num2) {
-  return parseInt(num1) + parseInt(num2);
+  return parseFloat(num1) + parseFloat(num2);
 }
 function subtraction(num1, num2) {
-  return parseInt(num1) - parseInt(num2);
+  return parseFloat(num1) - parseFloat(num2);
 }
 function multiply(num1, num2) {
-  return parseInt(num1) * parseInt(num2);
+  return parseFloat(num1) * parseFloat(num2);
 }
 function divide(num1, num2) {
-  return parseInt(num1) / parseInt(num2);
+  return parseFloat(num1) / parseFloat(num2);
 }
 
 //GET

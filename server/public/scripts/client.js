@@ -47,8 +47,6 @@ function calculate(operator, num1, num2) {
   })
     .then(function (response) {
       console.log("Look at us now! HOORAH", response);
-      $("#first-number-input").val("");
-      $("#second-number-input").val("");
       getLastResult(); // to refresh the DOM
     })
     .catch(function () {
